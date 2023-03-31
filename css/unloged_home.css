@@ -15,8 +15,14 @@ header section {
     text-align: center;
 }
 
-div.card-spacing div {
-    margin: 1.0em
+section.card-section {
+    width: 100% !important;
+}
+
+section.card-section div div {
+    margin: 1.0em;
+    width: 23rem;
+    height: 10rem;
 }
 
 header section p {

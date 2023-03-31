@@ -1,0 +1,32 @@
+.menu {
+    height: 40px;
+}
+
+header {
+    height: 300px ;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+div.card-spacing div {
+    margin: 1.0em
+}
+
+header section p {
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.header-main-text {
+    font-weight: 700px;
+    font-size: 40px;
+    font-style: normal;
+    line-height: 82px;
+}

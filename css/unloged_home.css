@@ -38,7 +38,7 @@ div.category-section div div {
     margin: 1.0em;
 }
 
-section.employment-cards {
+section.employment-cards-section {
     background-color: #F6F7FC;
 }
 
@@ -51,4 +51,8 @@ section.employment-cards {
     font-size: 40px;
     font-style: normal;
     line-height: 52px;
+}
+
+.card-button {
+    float: right;
 }

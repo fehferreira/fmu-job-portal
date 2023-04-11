@@ -30,6 +30,16 @@ div.card-section div div {
     height: 15rem;
 }
 
+div.card-section div div {
+    margin: 1.0em;
+    width: 23rem;
+    height: 15rem;
+}
+
+div.card-section div div.card {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);;
+}
+
 div.category-section {
     width: 100% !important;
 }

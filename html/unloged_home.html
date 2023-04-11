@@ -9,16 +9,16 @@
     </head>
     <body class="container-fluid">
         <header class="header">
-            <div class="d-flex justify-content-around align-items-center menu" style="background-color: aqua;">
+            <div class="d-flex justify-content-around align-items-center mt-3 mb-3 menu">
                 <div>
                     Icone
                 </div>
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Interview</a>
-                    <a href="#">Languages</a>
-                    <a href="#">Data Structure</a>
-                    <a href="#">Algorithm</a>
+                    <a class="m-2" href="#">Home</a>
+                    <a class="m-2" href="#">Interview</a>
+                    <a class="m-2" href="#">Languages</a>
+                    <a class="m-2" href="#">Data Structure</a>
+                    <a class="m-2" href="#">Algorithm</a>
                 </nav>
                 <div>
                     <button type="button" class="btn btn-outline-primary">Sign in</button>
@@ -35,8 +35,10 @@
                     </div>
             </section>
         </header>
-        <main class="d-flex justify-content-center align-items-center">
-            <section class="mt-5 w-75 d-flex flex-wrap justify-content-center align-items-center card-section" style="">
+        <main>
+          <section style="display: block;">
+          <section class="d-flex justify-content-center align-items-center employment-cards">
+            <div class="mt-5 w-75 d-flex flex-wrap justify-content-center align-items-center card-section">
                 <p>Uma Plataforma, muitas <span>Soluções</span></p>
                 <div class="d-flex flex-wrap justify-content-center align-items-center">
                     <div class="card">
@@ -113,9 +115,24 @@
                       </div>
                 </div>
             </section>
-            <section>
-
+          </section>
+          </div>
+            <div>
+            <section class="m-5 p-5">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                  </div>
             </section>
+          </div>
         </main>
+        <footer>
+          Some content
+        </footer>
     </body>
 </html>

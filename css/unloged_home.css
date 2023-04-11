@@ -1,9 +1,9 @@
-.menu {
-    height: 40px;
+header {
+    height: min-content ;
 }
 
-header {
-    height: 300px ;
+footer {
+    background-color: #F6F7FC;
 }
 
 header section {
@@ -15,19 +15,27 @@ header section {
     text-align: center;
 }
 
-section.card-section {
-    width: 100% !important;
-}
-
-section.card-section div div {
-    margin: 1.0em;
-    width: 23rem;
-    height: 10rem;
-}
-
 header section p {
     font-family: 'Roboto';
     font-style: normal;
+}
+
+div.card-section {
+    width: 100% !important;
+}
+
+div.card-section div div {
+    margin: 1.0em;
+    width: 23rem;
+    height: 15rem;
+}
+
+section.employment-cards {
+    background-color: #F6F7FC;
+}
+
+.menu {
+    height: 40px;
 }
 
 .header-main-text {

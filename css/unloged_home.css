@@ -30,6 +30,14 @@ div.card-section div div {
     height: 15rem;
 }
 
+div.category-section {
+    width: 100% !important;
+}
+
+div.category-section div div {
+    margin: 1.0em;
+}
+
 section.employment-cards {
     background-color: #F6F7FC;
 }

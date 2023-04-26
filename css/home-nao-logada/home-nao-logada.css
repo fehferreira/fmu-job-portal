@@ -27,13 +27,13 @@ div.card-section {
 div.card-section div div {
     margin: 1.0em;
     width: 23rem;
-    height: 15rem;
+    height: 5rem;
 }
 
 div.card-section div div {
     margin: 1.0em;
     width: 23rem;
-    height: 15rem;
+    height: 8rem;
 }
 
 div.card-section div div.card {
@@ -66,3 +66,12 @@ section.employment-cards-section {
 .card-button {
     float: right;
 }
+
+.card-subtitle {
+    margin-left: 3em;
+}
+
+.body-filter-title span {
+    color: #3575e2;
+}
+

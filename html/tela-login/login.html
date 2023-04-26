@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../css/Login/login.css" />
+    
+    <title>Login</title>
+   
+</head>
+<body background="../assets/Wave.png">  
+   
+    <div>
+        
+        <!-- <img src="../assets/person.png"  class="person" /> -->
+        <input type="text" placeholder="Usuário">     
+        <br/>
+        <br/>
+        <input type="password" placeholder="Senha">
+        <br />
+        <br />
+        <button  class="botaoEntrar">Entrar</button>
+        <br>
+        <br>
+        <button id="btnCriarConta" class="btnCadastrarConta"> Não tem uma conta? Crie uma!</button>
+    </div>
+
+   <!--
+    <div class="iconCompany">
+        <img class="nameCompany" src="../assets/Frame 10.png">
+    </div>
+   --> 
+    
+</body>
+
+<script>
+
+let btnCriarConta = document.getElementById('btnCriarConta');
+
+btnCriarConta.addEventListener('click', function() {
+  window.location.href = "criarConta.html";
+})
+</script>
+</html>

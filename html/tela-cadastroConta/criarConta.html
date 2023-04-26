@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../css/criarConta/criarConta.css" />
+    <title>Crie sua conta!</title>
+   
+</head>
+
+
+<body>
+    <div class="createAccount">
+        <h2 >
+            Vamos criar sua conta!
+        </h2>
+    </div>
+    
+    <div>
+        <!-- <img src="../assets/person.png"  class="person" /> -->
+        <input class="inputEmail" type="email" placeholder="Digite seu e-mail">
+        <br>
+        <input class="inputUsuario"t ype="text" placeholder="Usuário">     
+        <br />
+        <input class="inputSenha" type="password" placeholder="Senha">
+        <br />   
+        <br/>
+        <button id="btnCriarConta" class="botaoCriarConta" >Criar Conta</button>
+        
+    </div>
+
+    
+
+
+
+
+
+</body>
+
+<script>
+
+let btnCriarConta = document.getElementById('btnCriarConta');
+
+btnCriarConta.addEventListener('click', function() {
+  window.location.href = "criarConta.html";
+})
+</script>
+</html>

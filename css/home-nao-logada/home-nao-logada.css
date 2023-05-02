@@ -56,6 +56,10 @@ section.employment-cards-section {
     background-color: #F6F7FC;
 }
 
+section.footer-card-section {
+    background-color: #F6F7FC;
+}
+
 .menu {
     height: 40px;
 }
@@ -86,3 +90,26 @@ section.employment-cards-section {
     margin-bottom: 1em !important;
 }
 
+.card-footer {
+    background-image: url(footer-background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 950px;
+    width: 100%;
+}
+
+div.card-footer div.card-body {
+    position: relative;
+    float: right;
+    width: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    color: white;
+}
+
+div.card-footer div.card-body button {
+    margin-top: 1em;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    color: #3575e2;
+}

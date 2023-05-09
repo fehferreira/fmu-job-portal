@@ -1,0 +1,115 @@
+header {
+    height: min-content ;
+}
+
+footer {
+    background-color: #F6F7FC;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+header section p {
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+div.card-section {
+    width: 100% !important;
+}
+
+div.card-section div div {
+    margin: 1.0em;
+    width: 23rem;
+    height: 5rem;
+}
+
+div.card-section div div {
+    margin: 1.0em;
+    width: 23rem;
+    height: 8rem;
+}
+
+div.card-section div div.card {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);;
+}
+
+div.category-section div div.card {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);;
+}
+
+div.category-section {
+    width: 100% !important;
+}
+
+div.category-section div div {
+    margin: 1.0em;
+}
+
+section.employment-cards-section {
+    background-color: #F6F7FC;
+}
+
+section.footer-card-section {
+    background-color: #F6F7FC;
+}
+
+.menu {
+    height: 40px;
+}
+
+.header-main-text {
+    font-weight: 600px;
+    font-size: 40px;
+    font-style: normal;
+    line-height: 52px;
+}
+
+.card-button {
+    float: right;
+}
+
+.card-subtitle {
+    margin-left: 3em;
+}
+
+.body-filter-title span {
+    color: #3575e2;
+}
+
+.filter {
+    height: 40px !important; 
+    gap: 1em !important; 
+    margin: 0 !important; 
+    margin-bottom: 1em !important;
+}
+
+.card-footer {
+    background-image: url(footer-background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 950px;
+    width: 100%;
+}
+
+div.card-footer div.card-body {
+    position: relative;
+    float: right;
+    width: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    color: white;
+}
+
+div.card-footer div.card-body button {
+    margin-top: 1em;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    color: #3575e2;
+}

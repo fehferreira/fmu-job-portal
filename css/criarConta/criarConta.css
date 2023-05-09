@@ -27,7 +27,7 @@ input {
 
 
 .botaoCriarConta {
-    background-color: steelblue;
+    background-color: rgb(53,117,226);
     border: none;
     padding: 15px;
     width: 115%;
@@ -48,11 +48,6 @@ h2 {
     
 }
 
-button:hover {
-    background-color: midnightblue;
-    cursor: pointer;
-    
-}
 
 
 .createAccount{
@@ -62,6 +57,7 @@ button:hover {
     transform: translate(-50%, -50%);
     padding: 80px;
     border-radius: 20px;
+    
 
 }
 
@@ -78,5 +74,9 @@ button:hover {
 .inputSenha{
     width: 200%;
     
+}
+
+.background{
+    background-image: url(../../assets/criarContaWalpaper.svg);
 }
 

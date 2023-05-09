@@ -5,34 +5,31 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../../css/Login/login.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/Login/login.css" /> <!-- ccs login-->
     
     <title>Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/logo 1.svg"> <!-- icon logo-->
    
 </head>
-<body background="../assets/Wave.png">  
-   
+<body class="background">  
+    <div class="txtLogin">
+        <h2 >
+           Bem vindo(a)!
+        </h2>
+    </div>
     <div>
-        
-        <!-- <img src="../assets/person.png"  class="person" /> -->
-        <input type="text" placeholder="Usuário">     
-        <br/>
-        <br/>
-        <input type="password" placeholder="Senha">
-        <br />
-        <br />
-        <button  class="botaoEntrar">Entrar</button>
-        <br>
-        <br>
-        <button id="btnCriarConta" class="btnCadastrarConta"> Não tem uma conta? Crie uma!</button>
-    </div>
 
-   <!--
-    <div class="iconCompany">
-        <img class="nameCompany" src="../assets/Frame 10.png">
+        <input type="text" id="usuario" placeholder="Usuário">     
+        <br/>
+        <br/>
+        <input id="senha" type="password" placeholder="Senha">
+        <br />
+        <br />
+        <button id="btnLogar"  class="botaoEntrar">Entrar</button>
+        <br>
+        <br>
+        <button id="btnCriarConta" class="btnCadastrarConta"> Criar Conta </button>
     </div>
-   --> 
-    
 </body>
 
 <script>
@@ -40,7 +37,14 @@
 let btnCriarConta = document.getElementById('btnCriarConta');
 
 btnCriarConta.addEventListener('click', function() {
-  window.location.href = "criarConta.html";
+  window.location.href = "../tela-cadastroConta/criarConta.html";
 })
+
+
+
+
+
+
+
 </script>
 </html>

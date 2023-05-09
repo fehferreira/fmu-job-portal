@@ -27,7 +27,7 @@ input {
 
 
 .botaoEntrar {
-    background-color: steelblue;
+    background-color: rgb(53,117,226);
     border: none;
     padding: 15px;
     width: 115%;
@@ -38,16 +38,37 @@ input {
     cursor: pointer;
 }
 
+
+.btnCadastrarConta {
+    background-color: white;
+    border: none;
+    padding: 15px;
+    width: 115%;
+    border-radius: 10px;
+    color: rgb(53,117,226);
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
 h1 {
     color: white;
     
 }
 
-button:hover {
-    background-color: midnightblue;
-    cursor: pointer;
-    
+
+.txtLogin{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 20px;
+    color: white;
 }
+
 
 img.person {
     width: 40%;
@@ -62,15 +83,9 @@ img.person {
     transform: translate(-50%, -50%);
 }
 
-.btnCadastrarConta{
-    position: absolute;
-    margin-left: 5px;
-    background-color: transparent;
-    color: white;
-}
 
-.nameCompany{
-    color: white;
-    position: initial;
-    padding: 15%;
+
+
+.background{
+background-image: url(../../assets/criarContaWalpaper.svg );
 }

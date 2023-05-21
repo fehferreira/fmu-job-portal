@@ -1,10 +1,7 @@
 body {
     font-family: Arial, Arial, Arial, Helvetica, sans-serif;
-    background-color: rgb(24, 67, 166);
-    background-image: url(../assets/wave.png);
-    background-size: cover;
-
-}
+    background-color: white;
+ }
 
 div {
     position: absolute;
@@ -13,6 +10,10 @@ div {
     transform: translate(-50%, -50%);
     padding: 80px;
     border-radius: 20px;
+    
+   
+    
+    
     
 }
 
@@ -30,7 +31,7 @@ input {
     background-color: rgb(53,117,226);
     border: none;
     padding: 15px;
-    width: 115%;
+    width: 121%;
     border-radius: 10px;
     color: white;
     margin-top: 10px;
@@ -42,10 +43,19 @@ input {
     
 }
 
-h2 {
-    color: white;
-    
-    
+
+h1 {
+    color: rgb(53,117,226);
+    position: absolute; 
+}
+
+.bg_input{
+    background-color: #f6f7fc;
+    width: 310px;
+    position: absolute;
+    margin-left: 110px;
+    height: 300px;
+    width: 410px
 }
 
 
@@ -53,15 +63,22 @@ h2 {
 .createAccount{
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 44%;
     transform: translate(-50%, -50%);
     padding: 80px;
     border-radius: 20px;
     
 
+    
+    
+
 }
 
 .inputEmail{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
     width: 200%;
     
 }
@@ -69,14 +86,37 @@ h2 {
 .inputUsuario{
     width: 200%;
     
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    
     
 }
 .inputSenha{
     width: 200%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
     
+
+
+
+.inputEmail:hover{
+    outline: 1px solid #3575e2;
+  background-color: #ffffff;
+}
+.inputSenha:hover{
+    outline: 1px solid #3575e2;
+  background-color: #ffffff;
+}
+.inputUsuario:hover{
+    outline: 1px solid #3575e2;
+  background-color: #ffffff;
 }
 
-.background{
-    background-image: url(../../assets/criarContaWalpaper.svg);
-}
+
 

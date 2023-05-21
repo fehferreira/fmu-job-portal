@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, Arial, Arial, Helvetica, sans-serif;
+    background-color: white;
+    background-image: url(../assets/Wave.png);
+    background-size: cover;
+
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 20px;
+    
+}
+
+input {
+    padding: 15px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    border: none;
+}
+
+
+.botaoEntrar {
+    background-color: rgb(53,117,226);
+    border: none;
+    padding: 15px;
+    width: 115%;
+    border-radius: 10px;
+    color: white;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.btnCadastrarConta {
+    background-color: white;
+    border: none;
+    padding: 15px;
+    width: 115%;
+    border-radius: 10px;
+    color: rgb(53,117,226);
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+h1 {
+    color: white;
+    
+}
+
+
+.txtLogin{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 20px;
+    color: rgb(53,117,226);
+    height: 0px;
+    
+}
+
+
+img.person {
+    width: 40%;
+    border-radius: 50%;
+    
+}
+
+.imageContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg_input{
+    background-color: #f6f7fc;
+    width: 400px;
+    position: absolute;
+    margin-left: 10px;
+    height: 330px;
+    
+    
+}
+
+.inputField:hover{
+    outline: 1px solid #3575e2;
+    background-color: #ffffff;
+}

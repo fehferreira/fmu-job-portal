@@ -57,7 +57,7 @@ section.employment-cards-section {
 }
 
 section.footer-card-section {
-    background-color: #F6F7FC;
+    background-color: #407BFF;
 }
 
 .menu {
@@ -91,10 +91,7 @@ section.footer-card-section {
 }
 
 .card-footer {
-    background-image: url(footer-background.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 950px;
+    height: min-content;
     width: 100%;
 }
 
@@ -102,7 +99,7 @@ div.card-footer div.card-body {
     position: relative;
     float: right;
     width: 25%;
-    margin-right: 25%;
+    margin-right: 20%;
     margin-top: 5%;
     color: white;
 }
@@ -113,3 +110,32 @@ div.card-footer div.card-body button {
     font-family: 'DM Sans', sans-serif;
     color: #3575e2;
 }
+
+body header div.header--utils {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 4em;
+  }
+  
+  body header div.header--utils div.header--utils--title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #141414;
+  }
+  
+  body header div.header--utils div.header--utils--buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+  }
+  
+  body header div.header--utils.header--utils--buttons > a {
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    padding-bottom: 0.5em;
+  }

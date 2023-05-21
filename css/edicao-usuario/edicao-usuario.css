@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+body {
+  width: 100%;
+}
+
+.form {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2em;
+  gap: 1em;
+}
+
+.row--content--column {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.form-dados,
+.form-addy,
+.form-info,
+.form-formacao,
+.form-exp {
+  padding: 1em;
+  width: 100%;
+  border: 1px solid rgba(20, 20, 20, 0.05);
+  border-radius: 8px;
+}
+.dados-header,
+.addy-header,
+.info-header,
+.formacao-header,
+.exp-header {
+  margin-bottom: 3 rem;
+  display: flex;
+}
+.dados-header h1::after,
+.addy-header h1::after,
+.info-header h1::after,
+.formacao-header h1::after,
+.exp-header h1::after {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: purple;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+.input-dados,
+.input-addy,
+.input-info,
+.input-formacao,
+.input-exp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-direction: column;
+  margin-bottom: 1.1rem;
+}
+.input-dados input,
+.input-addy input,
+.input-info input,
+.input-formacao input,
+.input-exp input {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
+  width: 100%;
+}
+.input-dados input:hover,
+.input-addy input:hover,
+.input-info input:hover,
+.input-formacao input:hover,
+.input-exp input:hover {
+  background-color: #eeeeee75;
+}
+.input-dados input:focus-visible,
+.input-addy input:focus-visible,
+.input-info input:focus-visible,
+.input-formacao input:focus-visible,
+.input-exp input:focus-visible {
+  outline: 1px solid purple;
+}
+.input-dados label,
+.input-addy label,
+.input-info label,
+.input-formacao label,
+.input-exp label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+.input-dados input::placeholder,
+.input-addy input::placeholder,
+.input-info input::placeholder,
+.input-formacao input::placeholder,
+.input-exp input::placeholder {
+  color: #000000be;
+}
+.dados-select option {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+.dados-select {
+  width: 100%;
+}
+
+.save-button button {
+  width: 20%;
+  margin-top: 2.5rem;
+  border: none;
+  background-color: #3575e2;
+  padding: 0.62rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.save-button button:hover {
+  background-color: #6b63fff1;
+}
+.save-button button a {
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: white;
+}
+@media screen and (max-width: 1064px) {
+  .input-dados,
+  .input-addy,
+  .input-info,
+  .input-formacao,
+  .input-exp {
+    flex-direction: column;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    max-height: 10rem;
+    padding-right: 5rem;
+  }
+}

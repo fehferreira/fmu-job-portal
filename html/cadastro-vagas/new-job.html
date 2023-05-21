@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../css/cadastro-vagas/new-job.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="job-wrapper">
+      <header class="job-header">
+        <h2>Cadastre uma nova vaga</h2>
+        <h3>Abaixo são os campos necessários para cadastrar uma nova vaga para sua empresa</h3>
+      </header>
+      <form class="job-form">
+        <div class="job-content">
+          <label class="job-label" for="title">Título da Vaga</label>
+          <input class="job-input" id="title" name="title" type="text" required />
+        </div>
+        <div class="job-content">
+          <label class="job-label" for="office">Profissão</label>
+          <input class="job-input" id="office" name="office" type="text" required />
+        </div>
+        <div class="job-content">
+          <label class="job-label" for="description">Descrição da vaga</label>
+          <textarea class="job-input" id="description" name="description" required></textarea>
+        </div>
+        <div class="job-content">
+          <label class="job-label" for="salary">Salário</label>
+          <input class="job-input" id="salary" name="salary" type="number" required />
+        </div>
+        <button type="submit" class="button--secondary">Cadastrar Vaga</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -25,6 +25,8 @@
   font-size: 16px;
   border: 1px solid #ffffff;
   padding-bottom: 0.5em;
+  color: #141414;
+  text-decoration: none;
 }
 
 .header--utils--buttons > a:hover {

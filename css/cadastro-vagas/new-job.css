@@ -1,0 +1,122 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #141414;
+}
+
+.job-wrapper {
+  background-color: #f6f7fc;
+  width: 100%;
+  margin-top: 32px;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.job-header {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+}
+
+.job-header h2 {
+  font-size: 32px;
+}
+
+.job-header h2::after {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: #3575e2;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.job-header h3 {
+  font-size: 20px;
+  color: #777777;
+}
+
+.job-form {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #eeeeee;
+  border-radius: 1em;
+  padding-bottom: 2em;
+  background-color: #f7f7f7;
+}
+
+.job-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 1em 2em;
+}
+
+.job-label {
+  font-size: 18px;
+  color: #272727;
+}
+
+.job-input {
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
+  resize: none;
+  background-color: #ffffff;
+}
+
+.job-input:hover {
+  background-color: #eeeeee75;
+}
+
+.job-input:focus-visible {
+  outline: 1px solid #3575e2;
+  background-color: #ffffff;
+}
+
+.job-form button {
+  min-width: 150px;
+  text-align: center;
+  padding: 1em;
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+.job-form button:hover {
+  cursor: pointer;
+}
+
+.job-form button:active {
+  opacity: 0.8;
+}
+
+.job-form input::-webkit-outer-spin-button,
+.job-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.job-form input[type='number'] {
+  -moz-appearance: textfield;
+}

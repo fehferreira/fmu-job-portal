@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Logada | NextJob</title>
+    <title>Cadastro de Vagas | Jobs4U</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,6 +21,14 @@
     <script>
       // Include external .html files
       $(function () {
+        var includes = $('[data-common]');
+        $.each(includes, function () {
+          var file = '../home-logada/' + $(this).data('common') + '.html';
+          $(this).load(file);
+        });
+      });
+
+      $(function () {
         var includes = $('[data-include]');
         $.each(includes, function () {
           var file = '' + $(this).data('include') + '.html';
@@ -30,12 +38,7 @@
     </script>
   </head>
   <body>
-    <header data-include="header-logado"></header>
-    <header data-include="hero"></header>
-    <section class="content">
-      <article data-include="filter" class="content--filter"></article>
-      <article data-include="jobs" class="content--jobs"></article>
-      <article data-include="plus-content" class="content--plus--content"></article>
-    </section>
+    <header data-common="header-logado"></header>
+    <div data-include="new-job"></div>
   </body>
 </html>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../../css/index.css" rel="stylesheet" />
-    <link href="../../css/home-logada/header.css" rel="stylesheet" />
+    <link href="../../css/common/header.css" rel="stylesheet" />
   </head>
   <header>
     <div class="header--utils">
@@ -15,11 +15,21 @@
         </a>
       </div>
       <div class="header--utils--login">
-        <img class="header--utils--avatar-icon" src="../../img/avatar-icon.jpeg" />
+        <img
+          id="btnAvatarIcon"
+          class="header--utils--avatar-icon"
+          src="../../img/avatar-icon.jpeg"
+        />
+        <div id="header-menu" class="header--menu">
+          <a href="../home-logada-pj/index.html">Minhas vagas</a>
+          <a href="../edicao-usuario/edicao-usuario.html">Editar informações</a>
+          <a href="#">Configurações</a>
+        </div>
         <a href="../home-nao-logada/index.html">
           <button class="button button--secondary">Sair</button>
         </a>
       </div>
     </div>
   </header>
+  <script src="../../js/common/menu-header.js"></script>
 </html>

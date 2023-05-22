@@ -21,16 +21,25 @@
     <script>
       // Include external .html files
       $(function () {
+        var includes = $('[data-common]');
+        $.each(includes, function () {
+          var file = '../common/' + $(this).data('common') + '.html';
+          $(this).load(file);
+        });
+      });
+
+      $(function () {
         var includes = $('[data-include]');
         $.each(includes, function () {
-          var file = '' + $(this).data('include') + '.html';
+          var file = './' + $(this).data('include') + '.html';
           $(this).load(file);
         });
       });
     </script>
   </head>
+
   <body>
-    <header data-include="header-logado"></header>
+    <header data-common="header-logado"></header>
     <header data-include="hero"></header>
     <section class="content">
       <article data-include="filter" class="content--filter"></article>

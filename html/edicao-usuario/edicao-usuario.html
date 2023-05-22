@@ -28,18 +28,18 @@
     <script>
         // Include external .html files
         $(function () {
-            var includes = $('[data-include]');
+            var includes = $('[data-common]');
             $.each(includes, function () {
-                var file = '../home-logada/' + $(this).data('include') + '.html';
+                var file = '../common/' + $(this).data('common') + '.html';
                 $(this).load(file);
             });
         });
     </script>
-    <title>Edição de Usuário</title>
+    <title>Edição de Usuário | Jobs4U</title>
 </head>
 
 <body>
-    <article data-include="header-logado"></article>
+    <article data-common="header-logado"></article>
     <div class="wrapper">
         <div class="form">
             <div class="row">

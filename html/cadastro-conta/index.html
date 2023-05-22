@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../css/criarConta/criarConta.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/logo 1.svg" />
+    <title>Cadastro</title>
+  </head>
+  <body class="background">
+    <div class="bg_input"></div>
+
+    <div class="createAccount">
+      <h1>Cadastro</h1>
+    </div>
+    <div class="backgroundInput"></div>
+
+    <div>
+      <input class="inputEmail" type="email" id="campoEmail" placeholder="Digite seu e-mail" />
+      <br />
+      <br />
+      <input class="inputUsuario" t ype="text" id="campoUsuario" placeholder="Usuário" />
+      <br />
+      <br />
+      <input class="inputSenha" type="password" id="campoSenha" placeholder="Senha" />
+      <br />
+      <br />
+      <button id="btnCriarConta" class="botaoCriarConta">Cadastrar</button>
+    </div>
+  </body>
+
+  <script>
+    let btnCriarConta = document.getElementById('btnCriarConta');
+
+    btnCriarConta.addEventListener('click', function () {
+      window.location.href = '../home-logada-pj/index.html';
+    });
+  </script>
+</html>

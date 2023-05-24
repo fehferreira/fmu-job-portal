@@ -1,15 +1,13 @@
-import { listJob } from '../../mock/vagas-mock.js';
-
-function getTitleList() {
+function getTitleList(listJob) {
   return listJob.length > 0
     ? `${listJob.length} vaga${listJob.length > 1 && 's'}`
     : 'Nenhum emprego encontrado';
 }
 
-function renderTitleList() {
+function renderTitleList(data) {
   const headerList = document.getElementById('list-header');
   const titleElement = document.createElement('h2');
-  const title = document.createTextNode(getTitleList());
+  const title = document.createTextNode(getTitleList(data));
 
   titleElement.appendChild(title);
   headerList.insertBefore(titleElement, headerList.firstChild);
@@ -77,9 +75,18 @@ function renderJobCard(job) {
   listContainerElement.appendChild(jobCardElement);
 }
 
-function renderJobList() {
-  listJob.forEach((job) => renderJobCard(job));
+function renderJobList(list) {
+  list.forEach((job) => renderJobCard(job));
 }
 
-renderTitleList();
-renderJobList();
+function getListJob() {
+  fetch('http://localhost:8000/api/employments')
+    .then((response) => response.json())
+    .then((data) => {
+      renderTitleList(data);
+      renderJobList(data);
+    })
+    .catch(() => console.error('error listagem'));
+}
+
+getListJob();

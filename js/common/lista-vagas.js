@@ -1,9 +1,8 @@
 import { listJob } from '../../mock/vagas-mock.js';
-import { iconImg } from '../../mock/icon-job-base64.js';
 
 function getTitleList() {
   return listJob.length > 0
-    ? `${listJob.length} emprego${listJob.length > 1 && 's'}`
+    ? `${listJob.length} vaga${listJob.length > 1 && 's'}`
     : 'Nenhum emprego encontrado';
 }
 
@@ -28,38 +27,40 @@ function createDetailElement(iconRef, labelText) {
   return detailElement;
 }
 
-function renderJobCard() {
+function renderJobCard(job) {
+  const { id, imgSrc, enterprise, office, details, description } = job;
+
   // create img
   const imgDivElement = document.createElement('div');
   imgDivElement.classList.add('list--content--icon');
   const imgElement = document.createElement('img');
-  imgElement.setAttribute('src', iconImg);
+  imgElement.setAttribute('src', imgSrc);
   imgDivElement.appendChild(imgElement);
 
   // enterprise name
   const enterpriseElement = document.createElement('label');
-  enterpriseElement.appendChild(document.createTextNode('Notion'));
+  enterpriseElement.appendChild(document.createTextNode(enterprise));
 
   // office name
   const officeElement = document.createElement('h3');
-  officeElement.appendChild(document.createTextNode('Junior UI Designer'));
+  officeElement.appendChild(document.createTextNode(office));
 
   // details list
   const detailElement = document.createElement('div');
   detailElement.classList.add('list--content--details');
-
-  const location = createDetailElement('pin_drop', 'Madrid');
-  const periode = createDetailElement('schedule', 'Tempo integral');
-  const amount = createDetailElement('attach_money', '30-32k');
-  const postDate = createDetailElement('calendar_today', '1 dia atrás');
-
-  detailElement.append(location, '•', periode, '•', amount, '•', postDate);
+  const nodeList = [];
+  if (details) {
+    details.forEach((element, index) => {
+      const createdElement = createDetailElement(element.icon, element.value);
+      nodeList.push(createdElement);
+      if (index + 1 !== details.length) nodeList.push('•');
+    });
+    detailElement.append(...nodeList);
+  }
 
   // description
-  const textNode =
-    'Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt.';
   const descriptionElement = document.createElement('p');
-  descriptionElement.appendChild(document.createTextNode(textNode));
+  descriptionElement.appendChild(document.createTextNode(description));
 
   // create content
   const contentElement = document.createElement('div');
@@ -70,10 +71,15 @@ function renderJobCard() {
   const jobCardElement = document.createElement('div');
   jobCardElement.classList.add('list--content--job');
   jobCardElement.append(imgDivElement, contentElement);
+  jobCardElement.setAttribute('id', `${id}-${enterprise}-${office}`);
 
   const listContainerElement = document.getElementById('list-content');
   listContainerElement.appendChild(jobCardElement);
 }
 
+function renderJobList() {
+  listJob.forEach((job) => renderJobCard(job));
+}
+
 renderTitleList();
-renderJobCard();
+renderJobList();

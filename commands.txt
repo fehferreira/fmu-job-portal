@@ -1,0 +1,4 @@
+install dependencies - compose install
+run server - php artisan server
+run migrations - php artisan migrate
+populate DB - php artisan db:seed --class=DatabaseSeeder

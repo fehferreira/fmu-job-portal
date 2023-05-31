@@ -77,10 +77,102 @@ function renderJobCard(job) {
 
 function renderJobList(list) {
   list.forEach((job) => renderJobCard(job));
+
+  // Hiden loading state
+  var loadingList = document.getElementById('loading-content');
+  loadingList.remove();
+
+  // Show rendered list
+  var list = document.getElementById('list-content');
+  list.style.display = 'flex';
+}
+
+function renderJobCardSkeleton() {
+  // create img
+  const imgDivElement = document.createElement('div');
+  imgDivElement.classList.add('list--content--icon');
+  const imgElement = document.createElement('div');
+  imgElement.style.width = '72px';
+  imgElement.style.heigth = '72px';
+  imgDivElement.classList.add('skeleton');
+  imgDivElement.appendChild(imgElement);
+
+  // enterprise name
+  const enterpriseElement = document.createElement('label');
+  enterpriseElement.style.width = '150px';
+  enterpriseElement.style.height = '18px';
+  enterpriseElement.classList.add('skeleton');
+
+  // office name
+  const officeElement = document.createElement('h3');
+  officeElement.style.width = '200px';
+  officeElement.style.height = '24px';
+  officeElement.classList.add('skeleton');
+
+  // details list
+  const detailElement = document.createElement('div');
+  detailElement.classList.add('list--content--details');
+  const nodeList = [];
+  const iconDefaultRef = ['pin_drop','schedule','attach_money','calendar_today'];
+  
+  const renderDetailSkeleton = (arrRef, index) => {
+    const detailElement = document.createElement('div');
+    detailElement.classList.add('list--content--details--info');
+    const iconElement = document.createElement('span');
+    iconElement.classList.add('material-symbols-outlined');
+    iconElement.appendChild(document.createTextNode(arrRef[index]));
+    const label = document.createElement('div');
+    label.style.width = '75px';
+    label.style.height = '16px';
+    label.classList.add('skeleton');
+    detailElement.append(iconElement, label);
+    return detailElement;
+  }
+  
+  for(var cont = 0; cont < 4; cont = cont+1) {
+    const createdElement = renderDetailSkeleton(iconDefaultRef, cont);
+    nodeList.push(createdElement);
+    if (cont < 3) nodeList.push('•');
+  };
+  detailElement.append(...nodeList);
+
+  // description
+  const descriptionElement = document.createElement('p');
+  descriptionElement.style.width = '100%';
+  descriptionElement.style.height = '32px';
+  descriptionElement.classList.add('skeleton');
+
+  // create content
+  const contentElement = document.createElement('div');
+  contentElement.classList.add('list--content--info');
+  contentElement.append(enterpriseElement, officeElement, detailElement, descriptionElement);
+
+  // create JobCard
+  const jobCardElement = document.createElement('div');
+  jobCardElement.classList.add('list--content--job');
+  jobCardElement.append(imgDivElement, contentElement);
+
+  return jobCardElement;
+}
+
+function renderLoadingStateList() {
+  // List skeleton cards
+  const listSkeleton = document.createElement('article');
+  listSkeleton.setAttribute('id', 'loading-content');
+  listSkeleton.classList.add('list--content');
+  listSkeleton.append(renderJobCardSkeleton());
+  listSkeleton.append(renderJobCardSkeleton());
+  listSkeleton.append(renderJobCardSkeleton());
+
+  // remove article of list
+  var list = document.getElementById('list-content');
+  list.before(listSkeleton);
+  list.style.display = 'none';
 }
 
 function getListJob() {
-  fetch('http://localhost:8000/api/employments')
+  renderLoadingStateList();
+  fetch('http://localhost:3001/api/employments')
     .then((response) => response.json())
     .then((data) => {
       renderTitleList(data);

@@ -1,3 +1,5 @@
+@import url(../common/skeleton.css);
+
 .list {
   width: 100%;
   display: flex;
@@ -17,7 +19,7 @@
 
 .list--header > h2 {
   font-size: 32px;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 700;
 }
 
@@ -89,19 +91,19 @@
 }
 
 .list--content--info > label {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 400;
   font-size: 18px;
 }
 
 .list--content--info > h3 {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 500;
   font-size: 24px;
 }
 
 .list--content--info > p {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 400;
   font-size: 16px;
 }
@@ -115,7 +117,7 @@
 }
 
 .list--content--details > label {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-weight: 400;
   font-size: 16px;
 }

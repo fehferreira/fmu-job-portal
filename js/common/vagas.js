@@ -1,7 +1,7 @@
-function getTitleList(listJob) {
-  return listJob.length > 0
-    ? `${listJob.length} vaga${listJob.length > 1 && 's'}`
-    : 'Nenhum emprego encontrado';
+import Pagination from './pagination.js';
+
+function getTitleList(totalJobs) {
+  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 && 's'}` : 'Nenhum emprego encontrado';
 }
 
 function renderTitleList(data) {
@@ -75,16 +75,86 @@ function renderJobCard(job) {
   listContainerElement.appendChild(jobCardElement);
 }
 
+function renderPaginationButtons(container) {
+  // First Page button
+  var firstPageButton = document.createElement('span');
+  firstPageButton.setAttribute('id', `pagination-first-page`);
+  firstPageButton.classList.add('material-symbols-outlined');
+  firstPageButton.classList.add('list--pagination--button');
+  firstPageButton.appendChild(document.createTextNode('first_page'));
+
+  // Previous button
+  var previousButton = document.createElement('span');
+  previousButton.setAttribute('id', `pagination-previous`);
+  previousButton.classList.add('material-symbols-outlined');
+  previousButton.classList.add('list--pagination--button');
+  previousButton.appendChild(document.createTextNode('chevron_left'));
+
+  // Acutal Page number
+  var actualPageNumber = document.createElement('span');
+  actualPageNumber.setAttribute('id', `actual-page`);
+  actualPageNumber.classList.add('list--pagination--actual-page');
+  actualPageNumber.appendChild(document.createTextNode(Pagination.currentPage));
+
+  // Next button
+  var nextButton = document.createElement('span');
+  nextButton.setAttribute('id', `pagination-next`);
+  nextButton.classList.add('material-symbols-outlined');
+  nextButton.classList.add('list--pagination--button');
+  nextButton.appendChild(document.createTextNode('chevron_right'));
+
+  // Last Page button
+  var lastPageButton = document.createElement('span');
+  lastPageButton.setAttribute('id', `pagination-last-page`);
+  lastPageButton.classList.add('material-symbols-outlined');
+  lastPageButton.classList.add('list--pagination--button');
+  lastPageButton.appendChild(document.createTextNode('last_page'));
+
+  container.append(firstPageButton, previousButton, actualPageNumber, nextButton, lastPageButton);
+}
+
 function renderJobList(list) {
   list.forEach((job) => renderJobCard(job));
-
   // Hiden loading state
   var loadingList = document.getElementById('loading-content');
   loadingList.remove();
-
   // Show rendered list
   var list = document.getElementById('list-content');
   list.style.display = 'flex';
+}
+
+function rerenderListJob() {
+  // cleaning header
+  var header = document.getElementById('list-header');
+  while (header.firstChild) {
+    header.removeChild(header.firstChild);
+  }
+
+  // cleaning list
+  var list = document.getElementById('list-content');
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+
+  // cleaning pagination
+  var pagination = document.getElementById('list-pagination');
+  while (pagination.firstChild) {
+    pagination.removeChild(pagination.firstChild);
+  }
+
+  getListJob();
+}
+
+function renderPagination(data) {
+  // create container elements
+  const container = document.createElement('div');
+  container.classList.add('list--pagination--buttons');
+
+  // render buttons
+  renderPaginationButtons(container);
+  var pagination = document.getElementById('list-pagination');
+  pagination.appendChild(container);
+  Pagination.initialize('pagination', data.last_page, rerenderListJob);
 }
 
 function renderJobCardSkeleton() {
@@ -113,8 +183,8 @@ function renderJobCardSkeleton() {
   const detailElement = document.createElement('div');
   detailElement.classList.add('list--content--details');
   const nodeList = [];
-  const iconDefaultRef = ['pin_drop','schedule','attach_money','calendar_today'];
-  
+  const iconDefaultRef = ['pin_drop', 'schedule', 'attach_money', 'calendar_today'];
+
   const renderDetailSkeleton = (arrRef, index) => {
     const detailElement = document.createElement('div');
     detailElement.classList.add('list--content--details--info');
@@ -127,13 +197,13 @@ function renderJobCardSkeleton() {
     label.classList.add('skeleton');
     detailElement.append(iconElement, label);
     return detailElement;
-  }
-  
-  for(var cont = 0; cont < 4; cont = cont+1) {
+  };
+
+  for (var cont = 0; cont < 4; cont = cont + 1) {
     const createdElement = renderDetailSkeleton(iconDefaultRef, cont);
     nodeList.push(createdElement);
     if (cont < 3) nodeList.push('•');
-  };
+  }
   detailElement.append(...nodeList);
 
   // description
@@ -172,13 +242,16 @@ function renderLoadingStateList() {
 
 function getListJob() {
   renderLoadingStateList();
-  fetch('http://localhost:3001/api/employments')
+  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}`, {
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  })
     .then((response) => response.json())
     .then((data) => {
-      renderTitleList(data);
-      renderJobList(data);
+      renderTitleList(data.total);
+      renderJobList(data.data);
+      renderPagination(data);
     })
-    .catch(() => console.error('error listagem'));
+    .catch((error) => console.error('error listagem', error));
 }
 
 getListJob();

@@ -2,22 +2,25 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2.5em;
   padding: 3em 4em;
   background-color: #fafafa;
 }
 
-.content--filter {
+.content--wrapper {
   width: 100%;
-  max-width: 250px;
+  max-width: 1311px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5em;
 }
 
 .content--jobs {
-  width: 100%;
+  width: auto;
   max-width: 812px;
 }
 
 .content--plus--content {
-  width: 100%;
+  width: auto;
   max-width: 250px;
 }

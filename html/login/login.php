@@ -1,24 +1,32 @@
 <?php
-function debug_to_console($data)
-{
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
 
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
-
-
-function connectPoke()
+function postLogin($dados)
 {
 
-    $url = 'https://pokeapi.co/api/v2/pokemon/charmander';
+    $url = 'http://localhost:8000/api/auth/login';
     $curl = curl_init($url);
-    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $dados);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
     $resp = curl_exec($curl);
     curl_close($curl);
-    echo $resp;
+    return $resp;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $body = file_get_contents('php://input');
+    $data = json_decode($body);
+    if ($data === null) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Erro ao decodificar o corpo da requisição.']);
+        exit;
+    }
+    $email = $data->email;
+    $password = $data->password;
+    $dados = [
+        'email' => $email,
+        'password' => $password
+    ];
+    echo postLogin($dados);
 }
 ?>

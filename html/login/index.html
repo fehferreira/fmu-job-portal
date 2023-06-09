@@ -30,29 +30,40 @@
     <div>
   </body>
   <script>
-    // Realiza a requisição POST
+    function createCookie(name, value, days) {
+      var expires;
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+      } else {
+        expires = "";
+      }
+      document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+
     $(document).ready(function() {
       $('#btnLogar').click(function() {
-        // Captura os valores dos inputs
         var email = $('#usuario').val();
         var password = $('#senha').val();
-
-        // Cria um objeto com os dados a serem enviados
         var data = {
           email,
           password
         };
-
         $.ajax({
           url: 'login.php',
           type: 'POST',
           data: JSON.stringify(data),
           contentType: 'application/json',
           success: function(data) {
-            console.log(JSON.parse(data));
+            document.cookie = `TOKEN_LOGIN=${data}; max-age=3600; path=/;`;
+            if(JSON.parse(data).client_type === 'employer'){
+              document.location.href = '../home-logada-pj/index.html';
+              return;
+            }
+            document.location.href = '../home-logada/index.html';
           },
           error: function(xhr, status, error) {
-            // Lida com erros de requisição aqui
             console.log(xhr);
             console.log(status);
             console.log(error);

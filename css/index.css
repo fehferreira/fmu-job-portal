@@ -1,4 +1,11 @@
 /* Elementos */
+
+@media (max-width: 876px) {
+  .footer-image {
+    display: none;
+  }
+}
+
 /* Botoes */
 
 .button {

@@ -58,10 +58,10 @@
           success: function(data) {
             document.cookie = `TOKEN_LOGIN=${data}; max-age=3600; path=/;`;
             if(JSON.parse(data).client_type === 'employer'){
-              document.location.href = '../home-logada-pj/index.html';
+              document.location.href = '../home-logada-pj/home-logada-pj.html';
               return;
             }
-            document.location.href = '../home-logada/index.html';
+            document.location.href = '../home-logada/home-logada.html';
           },
           error: function(xhr, status, error) {
             console.log(xhr);

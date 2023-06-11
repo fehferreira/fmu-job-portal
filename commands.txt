@@ -1,0 +1,6 @@
+install dependencies - compose install
+run server - php artisan serve
+run migrations - php artisan migrate
+delete tables in DB - php artisan migrate:reset
+populate DB - php artisan db:seed --class=DatabaseSeeder
+swagger = http://localhost:8000/api-documentation/index.html#/

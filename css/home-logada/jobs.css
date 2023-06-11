@@ -1,3 +1,5 @@
+@import url(../common/skeleton.css);
+
 .list {
   width: 100%;
   display: flex;
@@ -19,33 +21,6 @@
   font-size: 32px;
   font-family: 'DM Sans';
   font-weight: 700;
-}
-
-.list--header--dropdown {
-  width: 100%;
-  max-width: 40%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  padding: 0.7em;
-  gap: 0.5em;
-
-  background-color: #ffffff;
-}
-
-.list--header--dropdown-right {
-  margin-left: auto;
-}
-
-.list--header--dropdown-right:hover {
-  cursor: pointer;
-}
-
-.list--header--dropdown-right:active {
-  background-color: #f0f0f0;
-  border-radius: 4px;
 }
 
 .list--content {
@@ -125,4 +100,37 @@
   justify-content: center;
   align-items: center;
   gap: 0.5em;
+}
+
+.list--pagination {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.list--pagination--buttons {
+  margin-right: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list--pagination--button:hover {
+  cursor: pointer;
+  background-color: #eeeeee;
+}
+
+.list--pagination--button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 10px 1px rgba(0, 0, 0, 0.24);
+}
+
+.list--pagination--button--disable {
+  background-color: #eeeeee;
+  color: #cccccc;
+}
+
+.list--pagination--actual-page {
+  margin: 0.25em 0.5em 0 0.5em;
 }

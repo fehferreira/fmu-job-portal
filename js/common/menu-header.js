@@ -9,7 +9,7 @@ function renderUnloggedHeader() {
   signInButton.appendChild(document.createTextNode('Entre'));
   signInButton.addEventListener(
     'click',
-    () => (window.location.href = `${rootDir}/html/login/index.html`)
+    () => (window.location.href = `${rootDir}/html/login/login.html`)
   );
 
   const signUpButton = document.createElement('button');
@@ -18,7 +18,7 @@ function renderUnloggedHeader() {
   signUpButton.appendChild(document.createTextNode('Cadastre-se'));
   signUpButton.addEventListener(
     'click',
-    () => (window.location.href = `${rootDir}/html/cadastro-conta/index.html`)
+    () => (window.location.href = `${rootDir}/html/cadastro-conta/cadastro-conta.html`)
   );
 
   // Include in container
@@ -36,9 +36,10 @@ function renderLoggedHeader() {
 
   // Header menu
   const firstOption = document.createElement('a');
+  const sulfix = getTypeUser() === 'employer' ? '-pj' : '';
   firstOption.setAttribute(
     'href',
-    `${rootDir}/html/home-logada${getTypeUser() === 'employer' ? '-pj' : ''}/index.html`
+    `${rootDir}/html/home-logada${sulfix}/home-logada${sulfix}.html`
   );
   firstOption.appendChild(document.createTextNode('Minhas vagas'));
 

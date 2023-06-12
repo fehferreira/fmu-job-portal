@@ -8,11 +8,10 @@
 
 .content--wrapper {
   width: 100%;
-  max-width: 1311px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  gap: 2.5em;
+  gap: 1em;
 }
 
 .content--jobs {

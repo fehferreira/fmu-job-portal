@@ -113,11 +113,11 @@ function renderPaginationButtons(container) {
   container.append(firstPageButton, previousButton, actualPageNumber, nextButton, lastPageButton);
 }
 
-function renderJobList(list) {
+export function renderJobList(list) {
   list.forEach((job) => renderJobCard(job));
   // Hiden loading state
   var loadingList = document.getElementById('loading-content');
-  loadingList.remove();
+  if (loadingList) loadingList.remove();
   // Show rendered list
   var list = document.getElementById('list-content');
   list.style.display = 'flex';

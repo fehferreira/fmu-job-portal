@@ -2,7 +2,9 @@ import { getSessionToken, getTypeUser } from './getSessionToken.js';
 import Pagination from './pagination.js';
 
 function getTitleList(totalJobs) {
-  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 ? 's' : ''}` : 'Nenhum emprego encontrado';
+  return totalJobs > 0
+    ? `${totalJobs} vaga${totalJobs > 1 ? 's' : ''}`
+    : 'Nenhum emprego encontrado';
 }
 
 function renderTitleList(data) {
@@ -58,26 +60,26 @@ function renderJobCard(job) {
   button.classList.add('button');
   button.classList.add('button-primary');
   button.textContent = 'Inscrever-se';
-  button.addEventListener('click' , () => {
+  button.addEventListener('click', () => {
     $.ajax({
       url: `http://localhost:8000/api/employments/subscribe`,
-          type: 'POST',
-          data: JSON.stringify({employment_id: id}),
-          contentType: 'application/json',
-          cache: false,
-          headers: { 
-            'Authorization': 'Bearer ' + getSessionToken().token, 
-            'Accept': 'application/json', 
-            'Cache-Control': 'no-cache, no-store, must-revalidate', 
-        },
-        success: function(data) {
-          alert('Inscricao realizada com Sucesso');
-        },
-        error: function(xhr, status, error) {
-          console.log(xhr);
-          console.log(status);
-          console.log(error);
-        },
+      type: 'POST',
+      data: JSON.stringify({ employment_id: id }),
+      contentType: 'application/json',
+      cache: false,
+      headers: {
+        Authorization: 'Bearer ' + getSessionToken().token,
+        Accept: 'application/json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+      },
+      success: function (data) {
+        alert('Inscricao realizada com Sucesso');
+      },
+      error: function (xhr, status, error) {
+        console.log(xhr);
+        console.log(status);
+        console.log(error);
+      },
     });
   });
 
@@ -85,7 +87,7 @@ function renderJobCard(job) {
   const contentElement = document.createElement('div');
   contentElement.classList.add('list--content--info');
   contentElement.append(enterpriseElement, officeElement, detailElement, descriptionElement);
-  if(getTypeUser() === 'employee') {
+  if (getTypeUser() === 'employee') {
     contentElement.append(button);
   }
 
@@ -264,10 +266,13 @@ function renderLoadingStateList() {
   list.style.display = 'none';
 }
 
-export function getListJob(search = '') {
+export function getListJob(search = '', endpoint = 'api/employments/me') {
   renderLoadingStateList();
-  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}&search=${search}`, {
-    headers: { 'Access-Control-Allow-Origin': '*' },
+  fetch(`http://localhost:8000/${endpoint}?page=${Pagination.currentPage}&search=${search}`, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      Authorization: `Bearer ${getSessionToken().token}`,
+    },
   })
     .then((response) => response.json())
     .then((data) => {

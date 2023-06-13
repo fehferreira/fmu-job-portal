@@ -1,7 +1,7 @@
 import Pagination from './pagination.js';
 
 function getTitleList(totalJobs) {
-  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 && 's'}` : 'Nenhum emprego encontrado';
+  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 ? 's' : ''}` : 'Nenhum emprego encontrado';
 }
 
 function renderTitleList(data) {

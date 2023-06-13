@@ -15,6 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1em;
 }
 
 .list--header > h2 {
@@ -105,7 +106,8 @@
 .list--pagination {
   width: 100%;
   display: flex;
-  justify-content: end;
+  margin-top: 1em;
+  justify-content: center;
   align-items: center;
 }
 

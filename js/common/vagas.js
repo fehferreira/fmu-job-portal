@@ -240,9 +240,9 @@ function renderLoadingStateList() {
   list.style.display = 'none';
 }
 
-function getListJob() {
+export function getListJob(search = '') {
   renderLoadingStateList();
-  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}`, {
+  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}&search=${search}`, {
     headers: { 'Access-Control-Allow-Origin': '*' },
   })
     .then((response) => response.json())
@@ -253,5 +253,3 @@ function getListJob() {
     })
     .catch((error) => console.error('error listagem', error));
 }
-
-getListJob();

@@ -51,22 +51,22 @@
                     </div>
                     <div class="row">
                         <div class="input-dados col">
-                            <label for="name">Nome</label>
-                            <input id="name" type="text" placeholder="Digite seu nome" required>
+                            <label for="fantasy-name">Nome Fantasia</label>
+                            <input id="fantasy-name" type="text" placeholder="Digite o nome fantasia" required>
                         </div>
                         <div class="input-dados col">
-                            <label for="surname">Sobrenome</label>
-                            <input id="surname" type="text" placeholder="Digite seu sobrenome" required>
+                            <label for="bussiness-name">Nome da Empresa</label>
+                            <input id="bussiness-name" type="text" placeholder="Digite o nome da empresa" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-dados col">
-                            <label for="nacionality">Nacionalidade</label>
-                            <input id="nacionality" type="text" placeholder="Exemplo: brasileiro">
+                            <label for="country">País</label>
+                            <input id="country" type="text" placeholder="Exemplo: Brasil">
                         </div>
                         <div class="input-dados col">
-                            <label for="cpf">Documento(CPF)</label>
-                            <input id="cpf" type="text" placeholder="111.111.111-11" autocomplete="off" maxlength="14"
+                            <label for="cnpj">Documento(CNPJ)</label>
+                            <input id="cnpj" type="text" placeholder="11.111.111/1111-22" autocomplete="off" maxlength="14"
                                 required>
                         </div>
                     </div>
@@ -140,10 +140,10 @@
           headers: { 'Authorization': 'Bearer ' + credentialsData.token, 'Accept': 'application/json' },
           success: function(data) {
             userUpdateId = data[0].id;
-            document.getElementById('name').value = data[0].name;
-            document.getElementById('surname').value = data[0].surname;
-            document.getElementById('cpf').value = data[0].cpf;
-            document.getElementById('nacionality').value = data[0].nacionality || '';
+            document.getElementById('fantasy-name').value = data[0].fantasy_name;
+            document.getElementById('bussiness-name').value = data[0].bussiness_name;
+            document.getElementById('cnpj').value = data[0].cnpj;
+            document.getElementById('country').value = data[0].nacionality || '';
             document.getElementById('cep').value = data[0].cep || '';
             document.getElementById('state').value = data[0].state || '';
             document.getElementById('city').value = data[0].city || '';
@@ -166,9 +166,9 @@
       $('#btn-salvar').click(function() {
         let email = $('#email').val();
         let password = $('#password').val();
-        let name = $('#name').val();
-        let surname = $('#surname').val();
-        let nacionality = $('#nacionality').val();
+        let bussiness_name = $('#bussiness_name').val();
+        let fantasy_name = $('#fantasy-name').val();
+        let country = $('#country').val();
         let cep = $('#cep').val();
         let number = $('#number').val();
         let state = $('#state').val();
@@ -180,9 +180,9 @@
         var data = {
           email,
           password,
-          name,
-          surname,
-          nacionality,
+          fantasy_name,
+          bussiness_name,
+          country,
           address,
           cep,
           number,
@@ -194,7 +194,7 @@
           complement
         };
         $.ajax({
-          url: `http://localhost:8000/api/employees/${userUpdateId}`,
+          url: `http://localhost:8000/api/employers/${userUpdateId}`,
           type: 'PUT',
           data: JSON.stringify(data),
           contentType: 'application/json',

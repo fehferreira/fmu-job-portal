@@ -1,7 +1,8 @@
+import { getSessionToken, getTypeUser } from './getSessionToken.js';
 import Pagination from './pagination.js';
 
 function getTitleList(totalJobs) {
-  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 && 's'}` : 'Nenhum emprego encontrado';
+  return totalJobs > 0 ? `${totalJobs} vaga${totalJobs > 1 ? 's' : ''}` : 'Nenhum emprego encontrado';
 }
 
 function renderTitleList(data) {
@@ -26,18 +27,11 @@ function createDetailElement(iconRef, labelText) {
 }
 
 function renderJobCard(job) {
-  const { id, imgSrc, enterprise, office, details, description } = job;
-
-  // create img
-  const imgDivElement = document.createElement('div');
-  imgDivElement.classList.add('list--content--icon');
-  const imgElement = document.createElement('img');
-  imgElement.setAttribute('src', imgSrc);
-  imgDivElement.appendChild(imgElement);
+  const { id, fantasy_name, office, details, description } = job;
 
   // enterprise name
   const enterpriseElement = document.createElement('label');
-  enterpriseElement.appendChild(document.createTextNode(enterprise));
+  enterpriseElement.appendChild(document.createTextNode(fantasy_name));
 
   // office name
   const officeElement = document.createElement('h3');
@@ -60,16 +54,46 @@ function renderJobCard(job) {
   const descriptionElement = document.createElement('p');
   descriptionElement.appendChild(document.createTextNode(description));
 
+  const button = document.createElement('button');
+  button.classList.add('button');
+  button.classList.add('button-primary');
+  button.textContent = 'Inscrever-se';
+  button.addEventListener('click' , () => {
+    $.ajax({
+      url: `http://localhost:8000/api/employments/subscribe`,
+          type: 'POST',
+          data: JSON.stringify({employment_id: id}),
+          contentType: 'application/json',
+          cache: false,
+          headers: { 
+            'Authorization': 'Bearer ' + getSessionToken().token, 
+            'Accept': 'application/json', 
+            'Cache-Control': 'no-cache, no-store, must-revalidate', 
+        },
+        success: function(data) {
+          alert('Inscricao realizada com Sucesso');
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr);
+          console.log(status);
+          console.log(error);
+        },
+    });
+  });
+
   // create content
   const contentElement = document.createElement('div');
   contentElement.classList.add('list--content--info');
   contentElement.append(enterpriseElement, officeElement, detailElement, descriptionElement);
+  if(getTypeUser() === 'employee') {
+    contentElement.append(button);
+  }
 
   // create JobCard
   const jobCardElement = document.createElement('div');
   jobCardElement.classList.add('list--content--job');
-  jobCardElement.append(imgDivElement, contentElement);
-  jobCardElement.setAttribute('id', `${id}-${enterprise}-${office}`);
+  jobCardElement.append(contentElement);
+  jobCardElement.setAttribute('id', `${id}-${fantasy_name}-${office}`);
 
   const listContainerElement = document.getElementById('list-content');
   listContainerElement.appendChild(jobCardElement);

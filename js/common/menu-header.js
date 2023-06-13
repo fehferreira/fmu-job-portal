@@ -44,17 +44,17 @@ function renderLoggedHeader() {
   firstOption.appendChild(document.createTextNode('Minhas vagas'));
 
   const secondOption = document.createElement('a');
-  secondOption.setAttribute('href', `${rootDir}/html/edicao-usuario/edicao-usuario.html`);
+  if(getTypeUser() == 'employee') {
+    secondOption.setAttribute('href', `${rootDir}/html/edicao-usuario/edicao-usuario.html`);
+  } else {
+    secondOption.setAttribute('href', `${rootDir}/html/edicao-usuario/edicao-usuario-pj.html`);
+  }
   secondOption.appendChild(document.createTextNode('Editar informações'));
-
-  const thirdOption = document.createElement('a');
-  thirdOption.setAttribute('href', '#');
-  thirdOption.appendChild(document.createTextNode('Configurações'));
 
   const menu = document.createElement('div');
   menu.setAttribute('id', 'header-menu');
   menu.classList.add('header--menu');
-  menu.append(firstOption, secondOption, thirdOption);
+  menu.append(firstOption, secondOption);
 
   // Exit button
   const exitButton = document.createElement('button');

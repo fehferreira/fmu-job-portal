@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Logada | Jobs4U</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link href="../../css/reset.css" rel="stylesheet" />
-  <link href="../../css/home-logada-pj/home-logada-pj.css" rel="stylesheet" />
-  <script src="../../utils/jquery.js"></script>
-  <script>
-    // Include external .html files
-    $(function () {
-      var includes = $('[data-common]');
-      $.each(includes, function () {
-        var file = '../common/' + $(this).data('common') + '.html';
-        $(this).load(file);
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Logada | Jobs4U</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="../../css/reset.css" rel="stylesheet" />
+    <link href="../../css/home-logada-pj/home-logada-pj.css" rel="stylesheet" />
+    <script src="../../utils/jquery.js"></script>
+    <script>
+      // Include external .html files
+      $(function () {
+        var includes = $('[data-common]');
+        $.each(includes, function () {
+          var file = '../common/' + $(this).data('common') + '.html';
+          $(this).load(file);
+        });
       });
-    });
 
-    $(function () {
-      var includes = $('[data-include]');
-      $.each(includes, function () {
-        var file = '' + $(this).data('include') + '.html';
-        $(this).load(file);
+      $(function () {
+        var includes = $('[data-include]');
+        $.each(includes, function () {
+          var file = '' + $(this).data('include') + '.html';
+          $(this).load(file);
+        });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <header data-common="header-logado"></header>
-  <section class="content">
-    <article data-include="my-jobs" class="content--jobs"></article>
-    <article data-include="manager-jobs" class="content--manager--jobs"></article>
-  </section>
-</body>
-
+  <body>
+    <header data-common="header"></header>
+    <section class="content">
+      <article data-include="my-jobs" class="content--jobs"></article>
+      <article data-include="manager-jobs" class="content--manager--jobs"></article>
+    </section>
+  </body>
 </html>

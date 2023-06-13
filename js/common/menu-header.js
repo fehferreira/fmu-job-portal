@@ -63,7 +63,7 @@ function renderLoggedHeader() {
   exitButton.appendChild(document.createTextNode('Sair'));
   exitButton.addEventListener('click', () => {
     logOut();
-    window.location.href = `${rootDir}/html/index.html`;
+    window.location.href = `${rootDir}/html/index.php`;
   });
 
   // Include in container

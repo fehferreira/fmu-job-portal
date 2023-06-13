@@ -124,86 +124,37 @@
             <div class="mt-5 w-75 d-flex flex-wrap justify-content-center align-items-center category-section">
                 <h2 class="body-filter-title">Principais <span>Vagas</span></h2>
                 <div class="d-flex flex-wrap justify-content-center align-items-center">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="./cadastro-conta/cadastro-conta.html" class="link-register"><button
-                                    class="button button--secondary">Candidate-se</button></a>
-                        </div>
-                    </div>
+                    <?php
+                        $url = 'http://localhost:8000/api/employments';
+                        $params = [
+                            'page' => rand(1, 10),
+                        ];
+                        $urlCompleta = $url . '?' . http_build_query($params);
+                        $options = [
+                            'http' => [
+                                'method' => 'GET',
+                                'header' => 'Content-type: application/json'
+                            ]
+                        ];
+                        $context = stream_context_create($options);
+                        $resposta = file_get_contents($urlCompleta, false, $context);
+                        if ($resposta === false) {
+                            die('Erro na requisição GET.');
+                        }
+                        $respostaObject = json_decode($resposta);
+                        foreach($respostaObject->data as $data) {
+                            echo '<div class="card" style="max-width: 40%">
+                                <div class="card-body">
+                                    <h5 class="card-title">'. $data->office . '</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">' . $data->office . '</h6>
+                                    <p class="card-text">' . $data->description . '</p>
+                                    <a href="./cadastro-conta/cadastro-conta.html" class="link-register">
+                                        <button class="button button--secondary">Candidate-se</button>
+                                    </a>
+                                </div>
+                            </div>';
+                        }
+                    ?>
                 </div>
         </section>
         <section class="m-5 p-5 footer-card-section">

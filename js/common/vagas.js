@@ -1,3 +1,4 @@
+import { getSessionToken, getTypeUser } from './getSessionToken.js';
 import Pagination from './pagination.js';
 
 function getTitleList(totalJobs) {
@@ -53,10 +54,40 @@ function renderJobCard(job) {
   const descriptionElement = document.createElement('p');
   descriptionElement.appendChild(document.createTextNode(description));
 
+  const button = document.createElement('button');
+  button.classList.add('button');
+  button.classList.add('button-primary');
+  button.textContent = 'Inscrever-se';
+  button.addEventListener('click' , () => {
+    $.ajax({
+      url: `http://localhost:8000/api/employments/subscribe`,
+          type: 'POST',
+          data: JSON.stringify({employment_id: id}),
+          contentType: 'application/json',
+          cache: false,
+          headers: { 
+            'Authorization': 'Bearer ' + getSessionToken().token, 
+            'Accept': 'application/json', 
+            'Cache-Control': 'no-cache, no-store, must-revalidate', 
+        },
+        success: function(data) {
+          alert('Inscricao realizada com Sucesso');
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr);
+          console.log(status);
+          console.log(error);
+        },
+    });
+  });
+
   // create content
   const contentElement = document.createElement('div');
   contentElement.classList.add('list--content--info');
   contentElement.append(enterpriseElement, officeElement, detailElement, descriptionElement);
+  if(getTypeUser() === 'employee') {
+    contentElement.append(button);
+  }
 
   // create JobCard
   const jobCardElement = document.createElement('div');

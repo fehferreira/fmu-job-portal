@@ -141,7 +141,7 @@
                                     <h5 class="card-title">'. $data->office . '</h5>
                                     <h6 class="card-subtitle mb-2 text-body-secondary">' . $data->office . '</h6>
                                     <p class="card-text">' . $data->description . '</p>
-                                    <a href="./cadastro-conta/cadastro-conta.html" class="link-register">
+                                    <a href="./cadastro-conta/cadastro-conta.php" class="link-register">
                                         <button class="button button--secondary">Candidate-se</button>
                                     </a>
                                 </div>

@@ -2,73 +2,57 @@
 <html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../../css/login/login.css" />
-    <!-- ccs login-->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login | Jobs4U</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/logo 1.svg" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/login/login.css" />
     <script src="../../utils/jquery.js"></script>
-    <!-- icon logo-->
   </head>
-  <body class="background">
-    <div class="bg_input"></div>
-
-    <div class="txtLogin">
+  <body>
+    <div class="container">
       <h2>Bem vindo(a)!</h2>
+      <input id="usuario" name="usuario" type="text" placeholder="Usuário" />
+      <input id="senha" name="senha" type="password" placeholder="Senha" />
+      <button class="button button--secondary login--button" id="btnLogar">Entrar</button>
+      <button class="button button--primary login--button" id="btnCriarConta">Criar Conta</button>
     </div>
-    <div>
-      <input class="inputField" id="usuario" name="usuario" type="text" placeholder="Usuário" />
-      <br />
-      <br />
-      <input class="inputField" id="senha" name="senha" type="password" placeholder="Senha" />
-      <br />
-      <br />
-      <button type="submit" value="Logar" id="btnLogar" class="botaoEntrar">Entrar</button>
-      <br />
-      <br />
-      <button id="btnCriarConta" class="btnCadastrarConta" onclick="this.form.target='_blank';return true;">Criar Conta</button>
-    <div>
   </body>
   <script>
-    function createCookie(name, value, days) {
-      var expires;
-      if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-      } else {
-        expires = "";
-      }
-      document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
-    }
-
-    $(document).ready(function() {
-      $('#btnLogar').click(function() {
+    $(document).ready(function () {
+      // Evento do botao de 'Logar'
+      $('#btnLogar').click(function () {
         var email = $('#usuario').val();
         var password = $('#senha').val();
         var data = {
           email,
-          password
+          password,
         };
         $.ajax({
           url: 'login.php',
           type: 'POST',
           data: JSON.stringify(data),
           contentType: 'application/json',
-          success: function(data) {
+          success: function (data) {
             document.cookie = `TOKEN_LOGIN=${data}; max-age=3600; path=/;`;
-            if(JSON.parse(data).client_type === 'employer'){
+            if (JSON.parse(data).client_type === 'employer') {
               document.location.href = '../home-logada-pj/home-logada-pj.html';
               return;
             }
             document.location.href = '../home-logada/home-logada.html';
           },
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             console.log(xhr);
             console.log(status);
             console.log(error);
-          }
+          },
         });
+      });
+
+      // Evento do botao de 'Cadastrar-se'
+      $('#btnCriarConta').click(function () {
+        window.location.href = '../cadastro-conta/cadastro-conta.php';
       });
     });
   </script>

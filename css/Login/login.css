@@ -1,101 +1,53 @@
 body {
-    font-family: Arial, Arial, Arial, Helvetica, sans-serif;
-    background-color: white;
-    background-image: url(../assets/Wave.png);
-    background-size: cover;
-
+  font-family: 'DM Sans', sans-serif;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 20px;
-    
+.container {
+  margin-top: 15em;
+  width: 100%;
+  max-width: 560px;
+  background-color: #f6f7fc;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  padding: 3em 0;
+  gap: 1em;
 }
 
-input {
-    padding: 15px;
-    width: 100%;
-    font-size: 15px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-    border: none;
+.container > h2 {
+  color: rgb(53, 117, 226);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
 }
 
-
-.botaoEntrar {
-    background-color: rgb(53,117,226);
-    border: none;
-    padding: 15px;
-    width: 115%;
-    border-radius: 10px;
-    color: white;
-    margin-top: 10px;
-    font-size: 15px;
-    cursor: pointer;
+.container > input {
+  padding: 15px;
+  width: 50%;
+  min-width: 240px;
+  font-size: 15px;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
 }
 
-
-.btnCadastrarConta {
-    background-color: white;
-    border: none;
-    padding: 15px;
-    width: 115%;
-    border-radius: 10px;
-    color: rgb(53,117,226);
-    margin-top: 10px;
-    font-size: 15px;
-    cursor: pointer;
+.container > input:hover {
+  outline: 1px solid #3575e2;
+  background-color: #ffffff;
 }
 
-
-
-h1 {
-    color: white;
-    
-}
-
-
-.txtLogin{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 20px;
-    color: rgb(53,117,226);
-    height: 0px;
-    
-}
-
-
-img.person {
-    width: 40%;
-    border-radius: 50%;
-    
-}
-
-.imageContainer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.bg_input{
-    background-color: #f6f7fc;
-    width: 400px;
-    position: absolute;
-    margin-left: 10px;
-    height: 330px;
-    
-    
-}
-
-.inputField:hover{
-    outline: 1px solid #3575e2;
-    background-color: #ffffff;
+.login--button {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  min-width: 240px;
 }

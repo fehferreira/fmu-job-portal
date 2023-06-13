@@ -28,19 +28,12 @@
                 $(this).load(file);
             });
         });
-        $(function () {
-            var includes = $('[data-include]');
-            $.each(includes, function () {
-                var file = './home-logada/' + $(this).data('include') + '.html';
-                $(this).load(file);
-            });
-        });
     </script>
 </head>
 
 <body class="container-fluid">
     <header data-common="header"></header>
-    <header data-include="hero"></header>
+    <header data-common="hero"></header>
     <main>
         <section class="d-flex justify-content-center align-items-center employment-cards-section">
             <div class="mt-5 w-75 d-flex flex-wrap justify-content-center align-items-center card-section">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../../css/home-logada/hero.css" rel="stylesheet" />
+    <link href="../../css/common/hero.css" rel="stylesheet" />
   </head>
   <body>
     <div class="header--dashboard">
@@ -15,22 +15,16 @@
           hoje
         </h1>
         <h3>
-          Milhares de empregos em áreas como computação, engenharia e tecnologia
-          aguardando por você
+          Milhares de empregos em áreas como computação, engenharia e tecnologia aguardando por você
         </h3>
       </div>
       <div class="header--dashboard--tools">
         <div class="header--dashboard--search header--dashboard--search--job">
           <span class="material-symbols-outlined">search</span>
-          <input type="search" placeholder="Qual cargo você procura?" />
-        </div>
-        <div
-          class="header--dashboard--search header--dashboard--search--location"
-        >
-          <span class="material-symbols-outlined"> location_on </span>
-          <input type="search" placeholder="Qual cargo você procura?" />
+          <input id="search-field" type="search" placeholder="Qual cargo você procura?" />
         </div>
         <button
+          id="search-submit-button"
           class="button button--secondary header--dashboard--tools--button"
         >
           Procurar vaga
@@ -38,4 +32,5 @@
       </div>
     </div>
   </body>
+  <script type="module" src="../../js/hero/hero.js"></script>
 </html>

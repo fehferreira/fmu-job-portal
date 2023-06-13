@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 950px;
+  margin-bottom: 1.5em;
+}

@@ -87,6 +87,6 @@ function handleMenu() {
 }
 
 const logo = document.getElementById('logo-header');
-logo.setAttribute('href', `${rootDir}/html/index.html`);
+logo.setAttribute('href', `${rootDir}/html/index.php`);
 
 renderMenuOptions();

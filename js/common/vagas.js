@@ -26,18 +26,11 @@ function createDetailElement(iconRef, labelText) {
 }
 
 function renderJobCard(job) {
-  const { id, imgSrc, enterprise, office, details, description } = job;
-
-  // create img
-  const imgDivElement = document.createElement('div');
-  imgDivElement.classList.add('list--content--icon');
-  const imgElement = document.createElement('img');
-  imgElement.setAttribute('src', imgSrc);
-  imgDivElement.appendChild(imgElement);
+  const { id, fantasy_name, office, details, description } = job;
 
   // enterprise name
   const enterpriseElement = document.createElement('label');
-  enterpriseElement.appendChild(document.createTextNode(enterprise));
+  enterpriseElement.appendChild(document.createTextNode(fantasy_name));
 
   // office name
   const officeElement = document.createElement('h3');
@@ -68,8 +61,8 @@ function renderJobCard(job) {
   // create JobCard
   const jobCardElement = document.createElement('div');
   jobCardElement.classList.add('list--content--job');
-  jobCardElement.append(imgDivElement, contentElement);
-  jobCardElement.setAttribute('id', `${id}-${enterprise}-${office}`);
+  jobCardElement.append(contentElement);
+  jobCardElement.setAttribute('id', `${id}-${fantasy_name}-${office}`);
 
   const listContainerElement = document.getElementById('list-content');
   listContainerElement.appendChild(jobCardElement);

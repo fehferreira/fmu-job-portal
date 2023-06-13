@@ -50,16 +50,22 @@ body {
   font-weight: 500;
 }
 
-form {
-  width: 100%;
+.register--user-type {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register--form {
+  width: 100%;
+  display: none;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 1em;
 }
 
-form > input {
+.register--input {
   padding: 15px;
   width: 50%;
   min-width: 240px;
@@ -71,14 +77,22 @@ form > input {
   box-shadow: 1px 1px 6px #0000001c;
 }
 
-form > input:hover {
+.register--container > input:hover {
   outline: 1px solid #3575e2;
   background-color: #ffffff;
 }
 
+.selection--user--button,
 .register--button {
   padding: 15px;
   text-align: center;
+}
+
+.register--button {
   width: 50%;
   min-width: 240px;
+}
+
+.show-form {
+  display: flex;
 }

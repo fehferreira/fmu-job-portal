@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de Usuário | Jobs4U</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/cadastro-conta/cadastro-conta.css" />
+    <script src="../../utils/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="register--container">
+      <div class="register--title">
+        <h1>Cadastre sua conta agora!</h1>
+        <h2>Começe hoje a correr atrás de uma nova vaga no mercado de trabalho</h2>
+      </div>
+      <div class="register--user-type">
+        <button
+          class="button button--secondary selection--user--button"
+          id="btnUserPF"
+          type="submit"
+        >
+          Pessoa Física
+        </button>
+        <button
+          class="button button--secondary selection--user--button"
+          id="btnUserPJ"
+          type="submit"
+        >
+          Pessoa Jurídica
+        </button>
+      </div>
+      <div id="register-form-pf" class="register--form show-form">
+        <input class="register--input" type="email" id="campoEmailPF" placeholder="E-mail" />
+        <input class="register--input" type="password" id="campoSenhaPF" placeholder="Senha" />
+        <input class="register--input" type="text" id="namePF" placeholder="Nome" />
+        <input class="register--input" type="text" id="surnamePF" placeholder="Sobrenome" />
+        <input class="register--input" type="text" id="cpfPF" placeholder="Documento" />
+        <button
+          class="button button--secondary register--button"
+          id="btnCriarContaPF"
+          type="submit"
+        >
+          Cadastrar
+        </button>
+      </div>
+      <div id="register-form-pj" class="register--form">
+        <input class="register--input" type="email" id="campoEmailPJ" placeholder="E-mail" />
+        <input class="register--input" type="password" id="campoSenhaPJ" placeholder="Senha" />
+        <input
+          class="register--input"
+          type="text"
+          id="bussinessNamePJ"
+          placeholder="Razão Social"
+        />
+        <input class="register--input" type="text" id="fantasyNamePJ" placeholder="Nome Fantasia" />
+        <input class="register--input" type="text" id="cnpjPJ" placeholder="Documento" />
+        <button
+          class="button button--secondary register--button"
+          id="btnCriarContaPJ"
+          type="submit"
+        >
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="../../js/cadastro-conta/cadastro-conta.js"></script>
+</html>

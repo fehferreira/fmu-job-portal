@@ -113,11 +113,11 @@ function renderPaginationButtons(container) {
   container.append(firstPageButton, previousButton, actualPageNumber, nextButton, lastPageButton);
 }
 
-function renderJobList(list) {
+export function renderJobList(list) {
   list.forEach((job) => renderJobCard(job));
   // Hiden loading state
   var loadingList = document.getElementById('loading-content');
-  loadingList.remove();
+  if (loadingList) loadingList.remove();
   // Show rendered list
   var list = document.getElementById('list-content');
   list.style.display = 'flex';
@@ -240,9 +240,9 @@ function renderLoadingStateList() {
   list.style.display = 'none';
 }
 
-function getListJob() {
+export function getListJob(search = '') {
   renderLoadingStateList();
-  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}`, {
+  fetch(`http://localhost:8000/api/employments?page=${Pagination.currentPage}&search=${search}`, {
     headers: { 'Access-Control-Allow-Origin': '*' },
   })
     .then((response) => response.json())
@@ -253,5 +253,3 @@ function getListJob() {
     })
     .catch((error) => console.error('error listagem', error));
 }
-
-getListJob();

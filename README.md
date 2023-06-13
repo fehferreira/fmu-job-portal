@@ -13,7 +13,7 @@ Este projeto contém os arquivos referente ao Front do projeto acima mencionado.
 Todas as páginas estão conectadas e referênciadas por HTML, CSS e JavaScript portanto para navegar entre elas é necessário apenas abrir a página
 
 ```
-html/index.html
+html/index.php
 ```
 
 no navegador da sua escolha.

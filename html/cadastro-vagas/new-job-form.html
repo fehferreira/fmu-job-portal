@@ -29,8 +29,50 @@
           <label class="job-label" for="salary">Salário</label>
           <input class="job-input" id="salary" name="salary" type="number" required />
         </div>
-        <button type="submit" class="button--secondary">Cadastrar Vaga</button>
+        <button id="btn-cadastrar" class="button--secondary">Cadastrar Vaga</button>
       </form>
     </div>
   </body>
 </html>
+<script type="module">
+  import { getSessionToken } from './../../js/common/getSessionToken.js'
+  const credentialsData = getSessionToken();
+  var userUpdateId = null;
+  if(credentialsData) {
+    $(document).ready(function() {
+      $('#btn-cadastrar').click(function() {
+        let title = $('#title').val();
+        let office = $('#office').val();
+        let description = $('#description').val();
+        let salary = $('#salary').val();
+        var data = {
+          title,
+          office,
+          description,
+          salary,
+        };
+        $.ajax({
+          url: `http://localhost:8000/api/employments`,
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          cache: false,
+          headers: {
+            'Authorization': 'Bearer ' + credentialsData.token,
+            'Accept': 'application/json',
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+        },
+          success: function(data) {
+            alert('Vaga cadastrada com sucesso');
+          },
+          error: function(xhr, status, error) {
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
+          },
+        });
+        return false;
+      });
+    });
+  }
+</script>

@@ -53,6 +53,9 @@
                         <div class="input-dados col">
                             <label for="name">Nome</label>
                             <input id="name" type="text" placeholder="Digite seu nome" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
                         </div>
                         <div class="input-dados col">
                             <label for="surname">Sobrenome</label>
@@ -66,8 +69,11 @@
                         </div>
                         <div class="input-dados col">
                             <label for="cpf">Documento(CPF)</label>
-                            <input id="cpf" type="text" placeholder="111.111.111-11" autocomplete="off" maxlength="14"
+                            <input id="cpf" type="text" data-mask="999.999.999-99" placeholder="111.111.111-11" autocomplete="off" maxlength="14"
                                 required>
+                                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                    CPF invalido.
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +86,10 @@
                     <div class="row">
                         <div class="input-addy col">
                             <label for="cep">CEP</label>
-                            <input id="cep" type="text" placeholder="00000-000" data-mask="99999-999" autocomplete="off" maxlength="9">
+                            <input id="cep" type="text" placeholder="00000-000" data-mask="99999-999" autocomplete="off" maxlength="9" required>
+                            <div class="invalid-feedback">
+                                CEP invalido.
+                            </div>
                         </div>
                         <div class="input-addy col">
                             <label for="state">Estado</label>
@@ -114,7 +123,7 @@
                     <div class="row">
                         <div class="input-info col">
                             <label for="phone">Telefone</label>
-                            <input id="phone" type="text" placeholder="+55 (11) 90000-0000" maxlength="17">
+                            <input id="phone" type="text" data-mask="(99) 99999-9999" placeholder="(11) 90000-0000" maxlength="17">
                         </div>
                         <div class="input-info col">
                             <label for="email">E-mail</label>
@@ -123,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <button id="btn-salvar" class="button button--secondary">Salvar alterações</button>
+            <button id="btn-salvar" type="submit" class="button button--secondary">Salvar alterações</button>
         </form>
         <article data-include="plus-content" class="col-2">
     </div>

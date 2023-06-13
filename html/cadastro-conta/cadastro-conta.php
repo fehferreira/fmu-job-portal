@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../../css/index.css" />
   <link rel="stylesheet" type="text/css" href="../../css/cadastro-conta/cadastro-conta.css" />
   <script src="../../utils/jquery.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
       <input type="password" id="campoSenha" placeholder="Senha" />
       <input type="text" id="name" placeholder="Nome" />
       <input type="text" id="sername" placeholder="Sobrenome" />
-      <input type="text" id="cpf" placeholder="Documento" />
+      <input type="text" id="cpf" data-mask="999.999.999-99" placeholder="Documento" />
       <button class="button button--secondary register--button" id="btnCriarConta" type="submit">Cadastrar</button>
     </form>
   </div>

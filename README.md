@@ -47,6 +47,6 @@ Segue abaixo todos aqueles que apoiaram na construção do projeto
 - **Felipe Ferreira** - _Inicialização, Área Logada_ - [fehferreira](https://github.com/fehferreira)
 - **Henrique Trajano** - _Área Deslogada, Contratos e Modelagem_ - [Trajy](https://github.com/Trajy)
 - **Gustavo Mendonça** - _Login, Cadastro de Usuários_ - [Gustavo0033](https://github.com/Gustavo0033)
-- **Murilo Lopes** - _Edição de usuário cadastrado_
+- **Murilo Lopes** - _Edição de usuário cadastrado_ - [murillolrocha](https://github.com/murillolrocha)
 
 ---

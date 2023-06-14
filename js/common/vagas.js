@@ -266,7 +266,7 @@ function renderLoadingStateList() {
   list.style.display = 'none';
 }
 
-export function getListJob(search = '', endpoint = 'api/employments/me') {
+export function getListJob(search = '', endpoint = 'api/employments') {
   renderLoadingStateList();
   fetch(`http://localhost:8000/${endpoint}?page=${Pagination.currentPage}&search=${search}`, {
     headers: {

@@ -48,7 +48,5 @@ Segue abaixo todos aqueles que apoiaram na construção do projeto
 - **Henrique Trajano** - _Área Deslogada, Contratos e Modelagem_ - [Trajy](https://github.com/Trajy)
 - **Gustavo Mendonça** - _Login, Cadastro de Usuários_ - [Gustavo0033](https://github.com/Gustavo0033)
 - **Murilo Lopes** - _Edição de usuário cadastrado_
-- **Henrique Sena** - _Apoio técnico_
-- **Leonardo Alves** - _Apoio técnico_
 
 ---

@@ -118,35 +118,35 @@
                 <h2 class="body-filter-title">Principais <span>Vagas</span></h2>
                 <div class="d-flex flex-wrap justify-content-center align-items-center">
                     <?php
-                        $url = 'http://localhost:8000/api/employments';
-                        $params = [
-                            'page' => rand(1, 10),
-                        ];
-                        $urlCompleta = $url . '?' . http_build_query($params);
-                        $options = [
-                            'http' => [
-                                'method' => 'GET',
-                                'header' => 'Content-type: application/json'
-                            ]
-                        ];
-                        $context = stream_context_create($options);
-                        $resposta = file_get_contents($urlCompleta, false, $context);
-                        if ($resposta === false) {
-                            die('Erro na requisição GET.');
-                        }
-                        $respostaObject = json_decode($resposta);
-                        foreach($respostaObject->data as $data) {
-                            echo '<div class="card" style="max-width: 40%">
+                    $url = 'http://localhost:8000/api/employments';
+                    $params = [
+                        'page' => rand(1, 10),
+                    ];
+                    $urlCompleta = $url . '?' . http_build_query($params);
+                    $options = [
+                        'http' => [
+                            'method' => 'GET',
+                            'header' => 'Content-type: application/json'
+                        ]
+                    ];
+                    $context = stream_context_create($options);
+                    $resposta = file_get_contents($urlCompleta, false, $context);
+                    if ($resposta === false) {
+                        die('Erro na requisição GET.');
+                    }
+                    $respostaObject = json_decode($resposta);
+                    foreach ($respostaObject->data as $data) {
+                        echo '<div class="card" style="max-width: 40%">
                                 <div class="card-body">
-                                    <h5 class="card-title">'. $data->office . '</h5>
+                                    <h5 class="card-title">' . $data->office . '</h5>
                                     <h6 class="card-subtitle mb-2 text-body-secondary">' . $data->office . '</h6>
                                     <p class="card-text">' . $data->description . '</p>
-                                    <a href="./cadastro-conta/cadastro-conta.php" class="link-register">
+                                    <a href="./cadastro-conta/cadastro-conta.html" class="link-register">
                                         <button class="button button--secondary">Candidate-se</button>
                                     </a>
                                 </div>
                             </div>';
-                        }
+                    }
                     ?>
                 </div>
         </section>
@@ -165,4 +165,5 @@
         </section>
     </main>
 </body>
+
 </html>
